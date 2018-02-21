@@ -48,6 +48,11 @@ function startNewGame() {
   markBoxesForGame();
 }
 
+function notifyPlayerTurn(playerNum) {
+  process.stdout.write(`PLAYER ${playerNum}'S TURN\n[select a number]\n`);
+
+}
+
 function markBoxesForGame() {
   let currentPlayer = 1;
   let currentMarker = 'X';
