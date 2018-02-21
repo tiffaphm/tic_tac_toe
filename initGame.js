@@ -29,7 +29,9 @@ process.stdout.write('Would you like to play a game? [YES/NO]\n');
 function getUserInput() {
   process.stdin.on('data', (chunk) => {
     if (chunk.toUpperCase() === 'YES\n') {
-      process.stdout.write(`Great! Please wait while I get you set up...\n\n#########################################\n`);
+      process.stdout.write(
+      `Great! Please wait while I get you set up...
+      #########################################\n`);
 
       setTimeout(() => {
         process.stdout.write(GAME_NAME + '\n');
