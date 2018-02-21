@@ -11,27 +11,29 @@ const GAME_NAME = `
 `
 
 const GAME_BOARD = `
-   .______.______.______.
-   |      |      |      |
-   |   1  |   2  |   3  |
-   |______|______|______|
-   |      |      |      |
-   |   4  |   5  |   6  |
-   |______|______|______|
-   |      |      |      |
-   |   7  |   8  |   9  |
-   |______|______|______|
+     .______.______.______.
+     |      |      |      |
+     |   1  |   2  |   3  |
+     |______|______|______|
+     |      |      |      |
+     |   4  |   5  |   6  |
+     |______|______|______|
+     |      |      |      |
+     |   7  |   8  |   9  |
+     |______|______|______|
 `
 
 process.stdout.write('Would you like to play a game? [YES/NO]\n');
 
 
 function getUserInput() {
+  const pleaseWait =
+  'Great! Please wait while I get you set up...\n\n'
+  + '#########################################\n'
+
   process.stdin.on('data', (chunk) => {
     if (chunk.toUpperCase() === 'YES\n') {
-      process.stdout.write(
-      `Great! Please wait while I get you set up...
-      #########################################\n`);
+      process.stdout.write(pleaseWait);
 
       setTimeout(() => {
         process.stdout.write(GAME_NAME + '\n');
