@@ -24,3 +24,23 @@ const GAME_BOARD = `
 `
 
 process.stdout.write('Would you like to play a game? [YES/NO]\n');
+
+
+function getUserInput() {
+  process.stdin.on('data', (chunk) => {
+    if (chunk.toUpperCase() === 'YES\n') {
+      process.stdout.write(`Great! Please wait while I get you set up...\n\n#########################################\n`);
+
+      setTimeout(() => {
+        process.stdout.write(GAME_NAME + '\n');
+        startNewGame();
+      }, 1500);
+    } else if (chunk.toUpperCase() === 'NO\n') {
+      process.stdout.write('Aw, maybe next time then.\n');
+    } else {
+      process.stdout.write('Please answer yes or no\n');
+    }
+  });
+}
+
+getUserInput();
