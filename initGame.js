@@ -43,4 +43,24 @@ function getUserInput() {
   });
 }
 
+function startNewGame() {
+  process.stdout.write(`${GAME_BOARD}\n`);
+  markBoxesForGame();
+}
+
+function markBoxesForGame() {
+  let currentPlayer = 1;
+  let currentMarker = 'X';
+  let playing = true;
+
+  while (playing) {
+    // store the inputs of player 1
+    // store the inputs of player 2
+    // each time a player makes a move, switch to next player (may need to abstract to another func)
+    // also switch markers
+
+    playing = false;
+  }
+}
+
 getUserInput();
